@@ -1,0 +1,329 @@
+
+// 此程序使用 Graphviz 脚本程序画武汉地铁线路图。
+// 作者：mantout
+
+// 定义：
+//   Line | Code | Color
+//  1号线 | U1 | #0067a4(地铁蓝)
+//  2号线 | U2 | #e99bc1(梅花红)
+//  3号线 | U3 | #dab866(归元金)
+//  4号线 | U4 | #b8d200(芳草绿)
+//  6号线 | U6 | #0077ee(鹦鹉绿)
+//  7号线 | E2 | #ee7800(凤凰橙)
+//  8号线 | U7 | #9aaead(青铜色)
+
+
+graph wuhan_metro {
+	rankdir="LR"
+	node[shape=box, style=filled, fontcolor=black]
+	edge[penwidth=5]
+
+	subgraph hankou {
+		label = "hankou"
+		style = "rounded, filled"
+
+		// Nodes of Line 1
+		node[color="#0067a4"]
+		DWDD[label="东吴大道"]
+		WHDD[label="五环大道"]
+		ETW[label="额头湾"]
+		ZYH[label="竹叶海"]
+		DLK[label="舵落口"]
+		GTYL[label="古田一路"]
+		GTEL[label="古田二路"]
+		GTSn[label="古田三路"]
+		GTSi[label="古田四路"]
+		HXYL[label="汉西一路"]
+		//ZG[label="宗关"]
+		TPY[label="太平洋"]
+		QKL[label="硚口路"]
+		CRL[label="崇仁路"]
+		LJBL[label="利济北路"]
+		YYL[label="友谊路"]
+		//XLM[label="循礼门"]
+		//DZL[label="大智路"]
+		//SYaL[label="三阳路"]
+		//HPL[label="黄浦路"]
+		TDJ[label="头道街"]
+		EQL[label="二七路"]
+		XZXC[label="徐州新村"]
+		DSC[label="丹水池"]
+		XR[label="新荣"]
+		DJ[label="堤角"]
+		TZG[label="滕子岗"]
+		SKXC[label="滠口新城"]
+		HKB[label="汉口北"]
+
+
+		// Nodes of Line 2
+		node[color="#e99bc1"]
+		THJC[label="天河机场"]
+		HKZB[label="航空总部"]
+		JHGY[label="佳海工业园"]
+		GWH[label="管委会"]
+		PLC[label="盘龙城"]
+		//HTDD[label="宏图大道"]
+		CQCL[label="常青车辆段"]
+		JYT[label="金银潭"]
+		//CQHY[label="常青花园"]
+		CGL[label="长港路"]
+		HKZ[label="汉口火车站"]
+		//FH[label="范湖"]
+		//WJDD[label="王家墩东"]
+		QNL[label="青年路"]
+		ZSGY[label="中山公园"]
+		//XLM[label="循礼门"]
+		//JHL[label="江汉路"]
+
+		// Nodes of Line 3
+		node[color="#dab866"]
+		//HTDD[label="宏图大道"]
+		SMZJ[label="市民之家"]
+		HHDD3[label="后湖大道"]
+		XYL[label="兴业路"]
+		ERXL[label="二七小路"]
+		LJZ[label="罗家庄"]
+		//ZJT[label="赵家条"]
+		HJEL[label="惠济二路"]
+		//XGL[label="香港路"]
+		LJH[label="菱角湖"]
+		//FH[label="范湖"]
+		YFL[label="云飞路"]
+		//WHSW[label="武汉商务区"]
+		SD[label="双墩"]
+		//ZG[label="宗关"]
+
+		// Nodes of Line 6
+		node[color="#0077ee"]
+		WSL[label="武胜路"]
+		HZJ[label="汉正街"]
+		LDQ[label="六渡桥"]
+		//JHL[label="江汉路"]
+		//DZL[label="大智路"]
+		MLL[label="苗栗路"]
+		//XGL[label="香港路"]
+		SYQ[label="三眼桥"]
+		TJD[label="唐家墩"]
+		SQL[label="石桥路"]
+		YCaH[label="杨汊湖"]
+		//CQHY[label="常青花园"]
+		QGDX[label="轻工大学"]
+		YBYB[label="园博园北"]
+		JYH[label="金银湖"]
+		JYHG[label="金银湖公园"]
+
+		// Nodes of Line 7
+		node[color="#ee7800"]
+		DFMC[label="东方马城"]
+		CF[label="长丰"]
+		CMT[label="常码头"]
+		//WHSW[label="武汉商务区"]
+		//WJDD[label="王家墩东"]
+		XHL[label="新华路"]
+		//XGL[label="香港路"]
+		//SYaL[label="三阳路"]
+
+		// Nodes of Line 8
+		node[color="#9aaead"]
+		SJT[label="三金潭车辆段"]
+		//HTDD[label="宏图大道"]
+		TZH[label="塔子湖"]
+		HHDD8[label="后湖大道"]
+		XFDD[label="幸福大道"]
+		ZYS[label="竹叶山"]
+		//ZJT[label="赵家条"]
+		//HPL[label="黄浦路"]
+
+
+		// Interchange Nodes
+		node[shape=ellipse]
+		ZG[label="宗关", fillcolor="#0067a4:#dab866"]
+		XLM[label="循礼门", fillcolor="#0067a4:#e99bc1"]
+		HTDD[label="宏图大道", fillcolor="#e99bc1:#dab866"]
+		FH[label="范湖", fillcolor="#e99bc1:#dab866"]
+		JHL[label="江汉路", fillcolor="#e99bc1:#0077ee"]
+		DZL[label="大智路", fillcolor="#0067a4:#0077ee"]
+		XGL[label="香港路", fillcolor="#dab866:#0077ee"]
+		CQHY[label="常青花园", fillcolor="#e99bc1:#0077ee"]
+		WHSW[label="武汉商务区", fillcolor="#dab866:#ee7800"]
+		WJDD[label="王家墩东", fillcolor="#e99bc1:#ee7800"]
+		SYaL[label="三阳路", fillcolor="#0067a4:#ee7800"]
+		//HHDD[label="后湖大道"]
+		ZJT[label="赵家条", fillcolor="#dab866:#9aaead"]
+		HPL[label="黄浦路", fillcolor="#0067a4:#9aaead"]
+	}
+
+	subgraph hanyang {
+		label = "hanyang"
+		style = "rounded, filled"
+
+		// Nodes of Line 3
+		node[color="#dab866"]
+		//WJW[label="王家湾"]
+		LYC[label="龙阳村"]
+		TJL[label="陶家岭"]
+		SXDD[label="四新大道"]
+		HYKY[label="汉阳客运站"]
+		SJH[label="三角湖"]
+		TYZX[label="体育中心"]
+		//DFGS[label="东风公司"]
+		ZYDD[label="沌阳大道"]
+
+		// Nodes of Line 4
+		node[color="#b8d200"]
+		HJK[label="黄金口"]
+		MJP[label="孟家铺"]
+		YAT[label="永安堂"]
+		YLoL[label="玉龙路"]
+		//WJW[label="王家湾"]
+		SLP[label="十里铺"]
+		QLM[label="七里庙"]
+		WLD[label="五里墩"]
+		HYZ[label="汉阳火车站"]
+		//ZJC[label="钟家村"]
+		LJL[label="拦江路"]
+
+		// Nodes of Line 6
+		node[color="#0077ee"]
+		//DFGS[label="东风公司"]
+		CCDL[label="车城东路"]
+		JCDD[label="江城大道"]
+		LGC[label="老关村"]
+		GBZX[label="国博中心"]
+		HYLY[label="海洋乐园"]
+		QJC[label="前进村"]
+		JGL[label="建港路"]
+		MYL[label="马鹦路"]
+		//ZJC[label="钟家村"]
+		QT[label="琴台"]
+
+		// Interchange Nodes
+		node[shape=ellipse]
+		WJW[label="王家湾", fillcolor="#dab866:#b8d200"]
+		DFGS[label="东风公司", fillcolor="#dab866:#0077ee"]
+		ZJC[label="钟家村", fillcolor="#b8d200:#0077ee"]
+	}
+
+	subgraph wuchang {
+		label = "wuchang"
+		style = "rounded, filled"
+
+		// Nodes of Line 2
+		node[color="#e99bc1"]
+		JYQ[label="积玉桥"]
+		//PXJ[label="螃蟹岬"]
+		XGS[label="小龟山"]
+		//HSGC[label="洪山广场"]
+		//ZNL[label="中南路"]
+		BTS[label="宝通寺"]
+		JDK[label="街道口"]
+		GBT[label="广埠屯"]
+		HQ[label="虎泉"]
+		YJW[label="杨家湾"]
+		GGGC[label="光谷广场"]
+
+		// Nodes of Line 4
+		node[color="#b8d200"]
+		FXL[label="复兴路"]
+		SYiL[label="首义路"]
+		//WCZ[label="武昌火车站"]
+		MYXQ[label="梅苑小区"]
+		//ZNL[label="中南路"]
+		//HSGC[label="洪山广场"]
+		CHHJ[label="楚河汉街"]
+		QYZ[label="青鱼嘴"]
+		DT[label="东亭"]
+		//YJZ[label="岳家嘴"]
+		TiJL[label="铁机路"]
+		LJG[label="罗家港"]
+		YLiL[label="园林路"]
+		RHL[label="仁和路"]
+		GYSL[label="工业四路"]
+		YCuH[label="杨春湖"]
+		WHZ[label="武汉火车站"]
+
+		// Nodes of Line 7
+		node[color="#ee7800"]
+		//XJP[label="徐家棚"]
+		HBDX[label="湖北大学"]
+		XHJ[label="新河街"]
+		//PXJ[label="螃蟹岬"]
+		XDM[label="小东门"]
+		//WCZ[label="武昌火车站"]
+		RAJ[label="瑞安街"]
+		JAJ[label="建安街"]
+		NHDD[label="南湖大道"]
+		BQC[label="板桥村"]
+		YZH[label="野芷湖"]
+
+		// Nodes of Line 8
+		node[color="#9aaead"]
+		//XJP[label="徐家棚"]
+		XD[label="徐东"]
+		WJD[label="汪家墩"]
+		//YJZ[label="岳家嘴"]
+		LY[label="梨园"]
+		// Phase 2 of Line 8
+		/*xxx[label="省博物馆"]
+		xxx[label="中南医院"]
+		xxx[label="水果湖"]
+		xxx[label="洪山路"]
+		xxx[label="小洪山"]
+		xxx[label="街道口"]
+		xxx[label="雄楚大街"]
+		xxx[label="洪山区政府"]
+		xxx[label="南湖"]
+		xxx[label="省农科院"]
+		xxx[label="野芷湖西路"]
+		xxx[label="野芷湖"]*/
+
+		// Interchange Nodes
+		node[shape=ellipse]
+		HSGC[label="洪山广场", fillcolor="#e99bc1:#b8d200"]
+		ZNL[label="中南路", fillcolor="#e99bc1:#b8d200"]
+		PXJ[label="螃蟹岬", fillcolor="#e99bc1:#ee7800"]
+		WCZ[label="武昌火车站", fillcolor="#b8d200:#ee7800"]
+		XJP[label="徐家棚", fillcolor="#ee7800:#9aaead"]
+		YJZ[label="岳家嘴", fillcolor="#b8d200:#9aaead"]
+	}
+
+	// Line 1
+	edge [color="#0067a4"]
+	DWDD -- WHDD -- ETW -- ZYH -- DLK -- GTYL -- GTEL -- GTSn -- GTSi -- HXYL -- 
+	ZG -- TPY -- QKL -- CRL -- LJBL -- YYL -- XLM -- DZL -- SYaL -- HPL -- TDJ -- 
+	EQL -- XZXC -- DSC -- XR -- DJ -- TZG -- SKXC -- HKB
+
+	// Line 2
+	edge[color="#e99bc1"]
+	THJC -- HKZB -- JHGY -- GWH -- PLC -- HTDD -- CQCL -- JYT -- CQHY -- CGL -- 
+	HKZ -- FH -- WJDD -- QNL -- ZSGY -- XLM -- JHL -- JYQ -- PXJ -- XGS -- 
+	HSGC -- ZNL -- BTS -- JDK -- GBT -- HQ -- YJW -- GGGC
+
+	// Line 3
+	edge[color="#dab866"]
+	HTDD -- SMZJ -- HHDD3 -- XYL -- ERXL -- LJZ -- ZJT -- HJEL -- XGL -- LJH -- 
+	FH -- YFL -- WHSW -- SD -- ZG -- WJW -- LYC -- TJL -- SXDD -- HYKY -- SJH -- 
+	TYZX -- DFGS -- ZYDD
+
+	// Line 4
+	edge[color="#b8d200"]
+	HJK -- MJP -- YAT -- YLoL -- WJW -- SLP -- QLM -- WLD -- HYZ -- ZJC -- 
+	LJL -- FXL -- SYiL -- WCZ -- MYXQ -- ZNL -- HSGC -- CHHJ -- QYZ -- DT -- 
+	YJZ -- TiJL -- LJG -- YLiL -- RHL -- GYSL -- YCuH -- WHZ
+
+	// Line 6
+	edge[color="#0077ee"]
+	DFGS -- CCDL -- JCDD -- LGC -- GBZX -- HYLY -- QJC -- JGL -- MYL -- ZJC --
+	QT -- WSL -- HZJ -- LDQ -- JHL -- DZL -- MLL -- XGL -- SYQ -- TJD -- SQL -- 
+	YCaH -- CQHY -- QGDX -- YBYB -- JYH -- JYHG
+
+	// Line 7
+	edge[color="#ee7800"]
+	DFMC -- CF -- CMT -- WHSW -- WJDD -- XHL -- XGL -- SYaL -- XJP -- HBDX --
+	XHJ -- PXJ -- XDM -- WCZ -- RAJ -- JAJ -- NHDD -- BQC -- YZH
+
+	// Line 8
+	edge[color="#9aaead"]
+	SJT -- HTDD -- TZH -- HHDD8 -- XFDD -- ZYS -- ZJT -- HPL -- XJP -- XD -- WJD -- 
+	YJZ -- LY
+}
