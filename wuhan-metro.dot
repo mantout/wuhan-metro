@@ -59,11 +59,11 @@ graph wuhan_metro {
 		node[color="#e99bc1"]
 		THJC[label="天河机场"]
 		HKZB[label="航空总部"]
-		JHGY[label="佳海工业园"]
-		GWH[label="管委会"]
+		SJG[label="宋家岗"]
+		JLDD[label="巨龙大道"]
 		PLC[label="盘龙城"]
 		//HTDD[label="宏图大道"]
-		CQCL[label="常青车辆段"]
+		CQC[label="常青城"]
 		JYT[label="金银潭"]
 		//CQHY[label="常青花园"]
 		CGL[label="长港路"]
@@ -295,7 +295,7 @@ graph wuhan_metro {
 
 	// Line 2
 	edge[color="#e99bc1"]
-	THJC -- HKZB -- JHGY -- GWH -- PLC -- HTDD -- CQCL -- JYT -- CQHY -- CGL -- 
+	THJC -- HKZB -- SJG -- JLDD -- PLC -- HTDD -- CQC -- JYT -- CQHY -- CGL -- 
 	HKZ -- FH -- WJDD -- QNL -- ZSGY -- XLM -- JHL -- JYQ -- PXJ -- XGS -- 
 	HSGC -- ZNL -- BTS -- JDK -- GBT -- HQ -- YJW -- GGGC
 
